@@ -4,178 +4,114 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>⚠️ تجربة توعوية عن الكوكيز وأذونات الموقع</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
   body {
     margin: 0;
     padding: 0;
-    font-family: "Cairo", sans-serif;
+    background-color: #27004d;
+    color: white;
+    font-family: "Cairo", "Segoe UI", sans-serif;
     direction: rtl;
     text-align: center;
-    color: white;
-    background: linear-gradient(180deg, #220365 0%, #27004d 100%);
-    overflow-x: hidden;
   }
-
   header {
-    padding: 40px 20px 20px;
-    animation: fadeIn 1.2s ease-in-out;
+    padding: 20px;
   }
-
   header img {
     width: 130px;
     height: auto;
-    border-radius: 100px;
     margin-bottom: 10px;
-    filter: drop-shadow(0 0 10px #92ffe0);
   }
-
   h1 {
     color: #92ffe0;
-    font-size: 30px;
+    font-size: 28px;
     margin: 10px 0;
-    text-shadow: 0 0 10px #92ffe0;
   }
-
   h2 {
     color: #f085f2;
-    text-shadow: 0 0 8px #f085f2;
-    font-size: 24px;
-    margin-top: 20px;
   }
-
   p {
-    line-height: 1.9;
-    max-width: 750px;
+    line-height: 1.8;
+    max-width: 700px;
     margin: 10px auto;
     color: #a7b9fe;
     font-size: 17px;
   }
-
   button {
     background: linear-gradient(45deg, #92ffe0, #f085f2);
     border: none;
-    padding: 14px 30px;
-    font-size: 18px;
-    border-radius: 16px;
+    padding: 12px 24px;
+    font-size: 17px;
+    border-radius: 12px;
     cursor: pointer;
-    margin-top: 15px;
-    color: #220365;
-    font-weight: 700;
-    box-shadow: 0 0 12px rgba(240, 133, 242, 0.4);
+    margin-top: 10px;
+    color: #27004d;
+    font-weight: bold;
     transition: all 0.3s ease;
   }
-
   button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 0 25px rgba(146, 255, 224, 0.7);
+    transform: scale(1.05);
   }
-
   section {
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
-    padding: 30px 20px;
-    margin: 25px auto;
-    width: 92%;
-    max-width: 850px;
-    box-shadow: 0 0 25px rgba(146, 255, 224, 0.15);
-    animation: fadeUp 1s ease forwards;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 25px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 12px rgba(146, 255, 224, 0.2);
   }
-
   #result, #locationInfo, #cookieInfo {
     color: #92ffe0;
-    margin-top: 12px;
+    margin-top: 10px;
     font-size: 16px;
-    opacity: 0;
-    transition: opacity 0.8s ease;
   }
-
-  .show {
-    opacity: 1;
-  }
-
   .warning {
     color: #f085f2;
     font-weight: bold;
-    text-shadow: 0 0 8px #f085f2;
   }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 15px auto;
-    text-align: right;
-    max-width: 700px;
-  }
-
-  ul li {
-    margin: 10px 0;
-    padding-right: 20px;
-    position: relative;
-  }
-
-  ul li::before {
-    content: "⚠️";
-    position: absolute;
-    right: 0;
-    color: #92ffe0;
-  }
-
   footer {
-    margin-top: 50px;
-    padding: 30px;
+    margin-top: 30px;
+    padding: 20px;
     color: #a7b9fe;
-    font-size: 15px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
   }
-
   .small {
     color: #a7b9fe;
     font-size: 14px;
   }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
 </style>
 </head>
-
 <body>
 
 <header>
-  <img src="logo.png" alt="شعار الأكاديمية (أضف شعارك هنا)">
+  <!-- 🟢 مكان وضع اللوجو -->
+  <img src="logo.png" alt="شعار الأكاديمية (أضف شعارك هنا)" style="border-radius: 100px;">
   <h1>تجربة توعوية: هل تعرفين ماذا تكشف الكوكيز عنك؟ 🍪</h1>
 </header>
 
 <section>
   <h2>🔍 قبل أن نبدأ</h2>
-  <p>يمكن لأي موقع أن يحصل على معلومات الموقع الدقيقة الخاصة بك من خلال بيانات المتصفح.</p>
-  <p>من المفترض أن يتم الاستئذان قبل الحصول عليها!</p>
-  <p class="warning">⚠️ لا تقلقي — لن نشارك بياناتك، هذه تجربة تعليمية فقط.</p>
+  <p>يمكن لأي موقع أن يحصل على معلومات الموقع الدقيقة الخاصة بك من خلال المعلومات المخزنة أساسا داخل المتصفح.</p>
+  <p>هذه المعلومات من المفروض أن يتم الإستئذان قبل الحصول عليها!!</p>
+  <p>وهذا توضيح بسيط لكيفية ذلك (بالطريقة القانونية)</p>
+  <p class="warning">⚠️ لا تقلقي — لن نشارك بياناتك ولن نحتفظ بها، هذه مجرد تجربة تعليمية.</p>
 
   <button id="getLocationBtn">🔓 جرّبي طلب الموقع الآن</button>
   <div id="result">لم يُطلب الموقع بعد.</div>
   <div id="locationInfo"></div>
 </section>
 
-<section>
-  <h2>لكن كيف يمكن لهذا أن يكون خطيرًا؟</h2>
-  <p>الخطر في أن الكوكيز الذي تقبلينه في كل مرة قادر على حفظ بياناتك، منها عنوان الـIP وموقعك الجغرافي، وحتى بيانات أخرى يصل إليها المتصفح دون أن تنتبهي.</p>
-</section>
+  <section>
+  <h2>لكن كيف يمكن لهذا أن يكون خطيرا؟</h2>
+  <p>الخطر يكمن في أن الكوكيز الذي تقبلينه في كل مرة تزورين موقعا جديدا قادر على الحصول على أكثر من الموقع الجغرافي، يحصل على عنوان الـ IP الخاص بك، وربما بيانات أخرى سمحت للمتصفح بالوصول إاليها </p>
 
+</section>
+  
 <section>
   <h2>🍪 ملفات الكوكيز</h2>
-  <p>الكوكيز ملفات صغيرة لتذكّرك في المواقع، لكنها قد تُستغل لتتبعك من موقع إلى آخر.  
-  بعض المواقع تجمع عنوان الـIP وموقعك الجغرافي بسكربتات خفية.</p>
+  <p>الكوكيز هي ملفات صغيرة يخزنها المتصفح لتتذكرك المواقع. لكنها قد تُستخدم أيضًا لتتبعك من موقع لآخر.  
+  بعض المواقع تجمع عنوان IP وموقعك الجغرافي عبر سكربتات دون أن تشعري.</p>
 
   <button id="acceptCookie">قبول كوكيز تجريبية</button>
   <button id="clearCookie">حذف الكوكيز</button>
@@ -183,24 +119,23 @@
 </section>
 
 <section>
-  <h2>🛡️ كيف تحمين نفسك؟</h2>
+  <h2>كيف تحمين نفسك من التعرض للترصد أو محاولة الإختراق؟</h2>
   <ul>
-    <li>لا تضغطي على أي رابط مجهول أو غير موثوق.</li>
-    <li>ارفُضي الكوكيز كلما أتيح لك ذلك.</li>
-    <li>احذفي بيانات التصفح بانتظام لحماية خصوصيتك.</li>
+    <li>لا تضغطي على أي رابط ترينه أو يتم إرساله لك، إحرصي أن تلجي الى الررابط المعروفة فقط أ, التي تثقين بأنها آمنة.</li>
+    <li>لا توافقي على الكوكيز في أي موقع تلجينه، مع أن كل المواقع يشوبها الخطر، إلا أن كثيرا من المواقع تعطيك خيار الرفض وهذا أفضل خيار.</li>
+    <li>إحذفي بيانات موقعك من المتصفح الخاص بك، ربما ستتوقف إشعارات حوال الطقس الدقيقة في القدوم، لكن ما دام متصفحك يملك معلوماتِِ عنك، يمكن لأي شخص على الانترنت الحصول عليها بسهولة بنقرة رابط واحدة منك وبدون أي استئذان أو مقدمات.</li>
+    <li>إذا اضطررت إلى الدخول إلى مواقع مشبوهة  قومي بتفعيل VPN، سيمنع الموقع من معرفة موقعك الحقيقي و رمز IP  الخاص بك.</li>
   </ul>
 
-  <p class="warning">عندما تشاهدين التفاصيل في الأعلى... تذكّري أنكِ قد <strong>وقعتِ في الفخ التوضيحي!</strong></p>
+  <p class="warning">عندما ترين التفاصيل في الأعلى... تذكّري أنكِ قد <strong>وقعتِ في الفخ التوضيحي!</strong></p>
 </section>
 
 <footer>
   © 2025 — أكادمية الأُنثى الرقمية 🛡️  
-  <div class="small">لا تُجمع أي بيانات ولا تُرسل لأي خادم. جميع العمليات مؤقتة داخل متصفحك فقط.</div>
+  <div class="small">لا تُجمع أي بيانات ولا تُرسل لأي خادم. جميع العمليات محلية داخل متصفحك مؤقتا فقط.</div>
 </footer>
 
 <script>
-const fadeIn = (el) => el.classList.add("show");
-
 // --- طلب الموقع ---
 document.getElementById("getLocationBtn").onclick = function() {
   const result = document.getElementById("result");
@@ -208,24 +143,21 @@ document.getElementById("getLocationBtn").onclick = function() {
 
   if (!navigator.geolocation) {
     result.textContent = "❌ المتصفح لا يدعم خدمة الموقع.";
-    fadeIn(result);
     return;
   }
 
   result.textContent = "📍 جارٍ طلب الإذن...";
-  fadeIn(result);
-
   navigator.geolocation.getCurrentPosition(async pos => {
     const lat = pos.coords.latitude;
     const lon = pos.coords.longitude;
 
-    result.innerHTML = `✅ تم الحصول على الإحداثيات:<br>${lat.toFixed(6)}, ${lon.toFixed(6)}<br>جارٍ البحث عن المدينة...`;
-    fadeIn(result);
+    result.innerHTML = `✅ تم الحصول على الإحداثيات: <br> ${lat.toFixed(6)}, ${lon.toFixed(6)} <br> جارٍ البحث عن المدينة والبلد...`;
 
     try {
       const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&addressdetails=1`);
       const data = await res.json();
       const addr = data.address;
+
       const country = addr.country || "غير معروف";
       const city = addr.city || addr.town || addr.village || "غير معروف";
       const suburb = addr.suburb || addr.neighbourhood || addr.road || "غير محدد";
@@ -236,32 +168,25 @@ document.getElementById("getLocationBtn").onclick = function() {
         <p><strong>الحي أو المنطقة:</strong> ${suburb}</p>
         <p class="warning">⚠️ لقد وقعتِ في الفخ! هذا هو مقدار ما يمكن لأي موقع معرفته عنك بإذن بسيط فقط.</p>
       `;
-      fadeIn(info);
     } catch (e) {
       info.innerHTML = `<p>حدث خطأ أثناء محاولة التعرف على موقعك.</p>`;
-      fadeIn(info);
     }
   }, err => {
     result.textContent = "❌ لم يتم منح الإذن أو حدث خطأ: " + err.message;
-    fadeIn(result);
   });
 };
 
 // --- الكوكيز ---
 document.getElementById("acceptCookie").onclick = () => {
   document.cookie = "demo_cookie=true; max-age=3600; path=/";
-  const msg = document.getElementById("cookieInfo");
-  msg.textContent = "✅ تم حفظ كوكيز تجريبية (صالح لمدة ساعة).";
-  fadeIn(msg);
+  document.getElementById("cookieInfo").textContent = "✅ تم حفظ كوكيز تجريبية.";
 };
-
 document.getElementById("clearCookie").onclick = () => {
   document.cookie = "demo_cookie=; max-age=0; path=/";
-  const msg = document.getElementById("cookieInfo");
-  msg.textContent = "🧹 تم حذف الكوكيز بنجاح.";
-  fadeIn(msg);
+  document.getElementById("cookieInfo").textContent = "🧹 تم حذف الكوكيز.";
 };
 </script>
 
 </body>
 </html>
+
