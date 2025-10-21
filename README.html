@@ -1,181 +1,0 @@
-<!doctype html>
-<html lang="ar">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>⚠️ تجربة توعوية عن الكوكيز وأذونات الموقع</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #27004d;
-    color: white;
-    font-family: "Cairo", "Segoe UI", sans-serif;
-    direction: rtl;
-    text-align: center;
-  }
-  header {
-    padding: 20px;
-  }
-  header img {
-    width: 130px;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  h1 {
-    color: #92ffe0;
-    font-size: 28px;
-    margin: 10px 0;
-  }
-  h2 {
-    color: #f085f2;
-  }
-  p {
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 10px auto;
-    color: #a7b9fe;
-    font-size: 17px;
-  }
-  button {
-    background: linear-gradient(45deg, #92ffe0, #f085f2);
-    border: none;
-    padding: 12px 24px;
-    font-size: 17px;
-    border-radius: 12px;
-    cursor: pointer;
-    margin-top: 10px;
-    color: #27004d;
-    font-weight: bold;
-    transition: all 0.3s ease;
-  }
-  button:hover {
-    transform: scale(1.05);
-  }
-  section {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 25px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 0 12px rgba(146, 255, 224, 0.2);
-  }
-  #result, #locationInfo, #cookieInfo {
-    color: #92ffe0;
-    margin-top: 10px;
-    font-size: 16px;
-  }
-  .warning {
-    color: #f085f2;
-    font-weight: bold;
-  }
-  footer {
-    margin-top: 30px;
-    padding: 20px;
-    color: #a7b9fe;
-    font-size: 14px;
-  }
-  .small {
-    color: #a7b9fe;
-    font-size: 14px;
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <!-- 🟢 مكان وضع اللوجو -->
-  <img src="logo.png" alt="شعار الأكاديمية (أضف شعارك هنا)" style="border-radius: 100px;">
-  <h1>تجربة توعوية: هل تعرفين ماذا تكشف الكوكيز عنك؟ 🍪</h1>
-</header>
-
-<section>
-  <h2>🔍 قبل أن نبدأ</h2>
-  <p>الكثير من المواقع على الإنترنت تطلب إذن الوصول إلى موقعك أو تحفظ ملفات كوكيز دون أن تدركي تمامًا ما تفعل.  
-  هذه الصفحة تجربة تعليمية تري كيف يمكن لموقع عادي أن يعرف مكانك الحقيقي تقريبًا،  
-  فقط بعد أن تضغطي على "السماح".</p>
-  <p class="warning">⚠️ لا تقلقي — لن نشارك بياناتك ولن نحتفظ بها، هذه مجرد تجربة تعليمية.</p>
-
-  <button id="getLocationBtn">🔓 جرّبي طلب الموقع الآن</button>
-  <div id="result">لم يُطلب الموقع بعد.</div>
-  <div id="locationInfo"></div>
-</section>
-
-<section>
-  <h2>🍪 ملفات الكوكيز</h2>
-  <p>الكوكيز هي ملفات صغيرة يخزنها المتصفح لتتذكرك المواقع. لكنها قد تُستخدم أيضًا لتتبعك من موقع لآخر.  
-  بعض المواقع تجمع عنوان IP وموقعك الجغرافي عبر سكربتات دون أن تشعري.</p>
-
-  <button id="acceptCookie">قبول كوكيز تجريبية</button>
-  <button id="clearCookie">حذف الكوكيز</button>
-  <div id="cookieInfo">لم تُقبل الكوكيز بعد.</div>
-</section>
-
-<section>
-  <h2>🧠 النتيجة</h2>
-  <p>إن سمحتِ للموقع بالوصول إلى موقعك، سنحاول تخمين <strong>البلد، المدينة، والحي</strong> عبر خدمة خرائط عامة.  
-  بعدها ستدركين كم هي المعلومات التي يمكن لأي موقع أن يعرفها عنك دون جهد كبير.</p>
-
-  <p class="warning">عندما ترين التفاصيل في الأعلى... تذكّري أنكِ قد <strong>وقعتِ في الفخ التوضيحي!</strong></p>
-</section>
-
-<footer>
-  © 2025 — تجربة توعوية من إعدادك 🛡️  
-  <div class="small">لا تُجمع أي بيانات ولا تُرسل لأي خادم. جميع العمليات محلية داخل متصفحك.</div>
-</footer>
-
-<script>
-// --- طلب الموقع ---
-document.getElementById("getLocationBtn").onclick = function() {
-  const result = document.getElementById("result");
-  const info = document.getElementById("locationInfo");
-
-  if (!navigator.geolocation) {
-    result.textContent = "❌ المتصفح لا يدعم خدمة الموقع.";
-    return;
-  }
-
-  result.textContent = "📍 جارٍ طلب الإذن...";
-  navigator.geolocation.getCurrentPosition(async pos => {
-    const lat = pos.coords.latitude;
-    const lon = pos.coords.longitude;
-
-    result.innerHTML = `✅ تم الحصول على الإحداثيات: <br> ${lat.toFixed(6)}, ${lon.toFixed(6)} <br> جارٍ البحث عن المدينة والبلد...`;
-
-    try {
-      const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&addressdetails=1`);
-      const data = await res.json();
-      const addr = data.address;
-
-      const country = addr.country || "غير معروف";
-      const city = addr.city || addr.town || addr.village || "غير معروف";
-      const suburb = addr.suburb || addr.neighbourhood || addr.road || "غير محدد";
-
-      info.innerHTML = `
-        <p><strong>البلد:</strong> ${country}</p>
-        <p><strong>المدينة:</strong> ${city}</p>
-        <p><strong>الحي أو المنطقة:</strong> ${suburb}</p>
-        <p class="warning">⚠️ لقد وقعتِ في الفخ! هذا هو مقدار ما يمكن لأي موقع معرفته عنك بإذن بسيط فقط.</p>
-      `;
-    } catch (e) {
-      info.innerHTML = `<p>حدث خطأ أثناء محاولة التعرف على موقعك.</p>`;
-    }
-  }, err => {
-    result.textContent = "❌ لم يتم منح الإذن أو حدث خطأ: " + err.message;
-  });
-};
-
-// --- الكوكيز ---
-document.getElementById("acceptCookie").onclick = () => {
-  document.cookie = "demo_cookie=true; max-age=3600; path=/";
-  document.getElementById("cookieInfo").textContent = "✅ تم حفظ كوكيز تجريبية.";
-};
-document.getElementById("clearCookie").onclick = () => {
-  document.cookie = "demo_cookie=; max-age=0; path=/";
-  document.getElementById("cookieInfo").textContent = "🧹 تم حذف الكوكيز.";
-};
-</script>
-
-</body>
-</html>
